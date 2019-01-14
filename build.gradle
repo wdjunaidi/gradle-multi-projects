@@ -1,0 +1,26 @@
+subprojects {
+    apply plugin: 'java'
+    group = 'multiprojects'
+    version = '1.0'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'junit:junit:4.12'
+    }
+}
+
+project(':client') {
+    dependencies {
+        implementation project(':shared')
+    }
+}
+
+project(':server') {
+    dependencies {
+        implementation project(':shared')
+    }
+}
