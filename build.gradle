@@ -8,19 +8,15 @@ subprojects {
         mavenCentral()
     }
 
+    sourceSets {
+        main {
+            java {
+                srcDirs = ['src/main/java', '../shared/src/main/java']
+            }
+        }
+    }
+
     dependencies {
         testImplementation 'junit:junit:4.12'
-    }
-}
-
-project(':client') {
-    dependencies {
-        implementation project(':shared')
-    }
-}
-
-project(':server') {
-    dependencies {
-        implementation project(':shared')
     }
 }
